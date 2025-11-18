@@ -1,0 +1,36 @@
+.glow-neon{
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.8),
+        0 0 12px rgba(210, 130, 255, 0.7),
+        0 0 24px rgba(140, 0, 255, 0.6),
+        0 0 48px rgba(110, 0, 200, 0.4);
+}
+
+
+.glow-soft{
+    position: relative;
+}
+
+.glow-soft::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(142, 45, 197, 0.35), transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+}
+
+.glow-medium{
+    position: relative;
+    isolation:isolate;
+}
+
+.glow-medium::before{
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle, rgba(142, 45, 197, 0.8), transparent 90%);
+    filter: blur(35px);
+    z-index: -1;
+    transform: scaleX(1.5);
+}
