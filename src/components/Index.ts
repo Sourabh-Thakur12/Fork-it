@@ -1,5 +1,6 @@
-import ForkItText  from "@/components/forkItText";
+import {ForkItText, RForkItText}  from "@/components/forkItText";
 
 export {
-    ForkItText
+    ForkItText,
+    RForkItText
 }

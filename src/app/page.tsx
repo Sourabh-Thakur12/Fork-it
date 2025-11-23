@@ -1,12 +1,16 @@
-import Image from "next/image";
-import {ForkItText} from "@/components/Index";
+import {ForkItText, RForkItText} from "@/components/Index";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-primary dark:bg-primary">
+    <>
+    <div className="flex flex-col min-h-screen items-center justify-center bg-primary dark:bg-primary">
       <div>
-        <ForkItText />
+        {/* <ForkItText /> */}
+      </div>
+      <div>
+        <RForkItText />
       </div>
     </div>
+    </>
   );
 }
