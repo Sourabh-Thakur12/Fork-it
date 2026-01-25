@@ -14,7 +14,7 @@ function ForkItText() {
 
  function RForkItText () {
     return(
-    <div className="relative inline-flex flex-col items-start rotate-90 sm:rotate-0 z-10">
+    <div className="relative inline-flex flex-col items-start  z-10">
 
   <span className="font-body text-1xl translate-x-13 sm:translate-x-24 translate-y-10 sm:text-5xl uppercase tracking-widest mb-5 sm:mb-1 z-10">
     WE
