@@ -8,7 +8,7 @@ export const projectData = [
          tags: ["React, Node.js, MongoDB"],
          gitHubLink: "https://github.com/example/project",
          liveDemoLink: "https://example.com/demo",
-         image: ""
+         image: "images/card_cover_temp.png"
         }
 
 ]

@@ -17,7 +17,7 @@ function HomePage() {
                     </div>
                     <div className="flex gap-44 justify-center mt-10">
                         {/* placeholder untill btnComponent */}
-                        <button type="button" className="border border-white rounded-full px-6 py-2 text-white hover:bg-white hover:text-primary">View Our Work</button>
+                        <button type="button" className="border border-white rounded-full PX-6 py-2 text-white hover:bg-white hover:text-primary">View Our Work</button>
                         <button type="button" className="border border-white rounded-full px-6 py-2 text-white hover:bg-white hover:text-primary">Lets Collaborate</button>
                     </div>
                 </div>
