@@ -1,4 +1,4 @@
-import Hero from "@/app/sections/hero";
+// import PreLoader from "@/app/sections/preLoader";
 import HomePage from "@/app/sections/home";
 import Projects from "./sections/projects";
 import About from "./sections/about";
@@ -7,7 +7,7 @@ import Team from "./sections/team";
 export default function Home() {
     return (
         <>
-        <Hero />
+        {/* <PreLoader /> */}
         <HomePage />
         <About />
         <Team />

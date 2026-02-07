@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Orbitron, Inter  } from "next/font/google";
 import "./globals.css";
+import PreLoader from "./sections/preLoader";
 
 const orbitron = Orbitron({
     variable: "--font-title",
@@ -46,6 +47,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${inter.variable} antialiased`}
       >
+
+        <PreLoader />
         {children}
       </body>
     </html>
