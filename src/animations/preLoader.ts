@@ -11,7 +11,7 @@ function AnimatePreloader(svgContainer : HTMLSpanElement, SvgComponentR : HTMLSp
 }
     paths.forEach((path) => {
         const length = path.getTotalLength();
-        console.log("path ", path);
+        // console.log("path ", path);
         path.style.strokeDasharray = `${length}`;
         path.style.strokeDashoffset = `${length}`;
     });
