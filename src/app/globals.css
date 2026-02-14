@@ -8,6 +8,10 @@
   --foreground: #171717;
   --color-primary: #190223;
   --color-secondary: #904191;
+  --size-sm: 0.012em;
+  --size-m: 0.022em;
+  --size-l: 0.044em;
+  --size-xl: 0.088em;
 }
 
 @theme inline{
@@ -19,6 +23,22 @@
   --font-mono: var(--font-geist-mono);
   --font-title: var(--font-title);
   --font-body: var(--font-body);
+
+}
+
+@layer utilities{
+    .text-stroke-1 {
+        -webkit-text-stroke: var(--size-sm) currentColor;
+    }
+
+    .text-stroke-fill-transparent {
+        -webkit-text-fill-color: transparent;
+    }
+
+  /* Fallback hover rule in case Tailwind hover variant isn't generated */
+  .hoverable-text-stroke:hover {
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

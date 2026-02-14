@@ -44,23 +44,16 @@ function splitTextIntoChars(element: HTMLElement): HTMLElement[] {
     return chars;
 }
 
-function AnimateAbout(textContainer: HTMLDivElement, scrollTrigger: HTMLDivElement) {
-
-    // NOTE: For Lenis integration, uncomment below and ensure Lenis events update ScrollTrigger
-    // const lenis = new Lenis();
-    // lenis.on('scroll', ScrollTrigger.update);
-    // gsap.ticker.add((time) => {
-    //     lenis.raf(time * 1000);
-    // });
-    // gsap.ticker.lagSmoothing(0);
+function AnimateAbout(textContainer: HTMLDivElement, bottomContainer: HTMLDivElement) {
 
     // IMPORTANT: Use requestAnimationFrame to wait for DOM layout, then setTimeout for safety
     requestAnimationFrame(() => {
         setTimeout(() => {
             // Target actual text elements (not parents with overflow: hidden)
             const para = textContainer.querySelectorAll("[data-line] .split-text");
-            const trigger = scrollTrigger;
+            const bottomPara = bottomContainer.querySelectorAll(" .text")
             console.log("para ", para);
+            console.log("bottomPara", bottomPara);
             console.log("Container width:", textContainer.offsetWidth);
             console.log("Container height:", textContainer.offsetHeight);
             const lineSplit: any[] = [];
@@ -97,6 +90,7 @@ function AnimateAbout(textContainer: HTMLDivElement, scrollTrigger: HTMLDivEleme
         // STEP 1: Set initial state BEFORE timeline creation
         // This is critical - animations only animate FROM this state TO target state
         gsap.set(".char", { y: 0, opacity: 0, filter: "blur(50px)" })
+        gsap.set(" .text", {y: 20 , opacity: 0, filter: "blur(20px)"})
 
         // STEP 2: Create timeline with ScrollTrigger
         // IMPORTANT: trigger should be textContainer (animated element), not parent
@@ -114,6 +108,21 @@ function AnimateAbout(textContainer: HTMLDivElement, scrollTrigger: HTMLDivEleme
             },
         });
 
+        const paraTl = gsap.timeline(
+            {
+            scrollTrigger: {
+                trigger: bottomContainer,  // Trigger on animated element
+                start: "top 110%",         // When element top hits 80% of viewport
+                end: "bottom 90%",        // When element center hits 40% of viewport
+                scrub: 0.6,               // 0.6s smoothing between scroll and animation
+                toggleActions: "play pause resume reset",
+                markers: true,            // Remove in production
+                onEnter: () => console.log("trigger entered"),
+                onLeave: () => console.log("trigger left"),
+            },
+        })
+
+
         // STEP 3: Define animation
         lineTl
             .to(".char", {
@@ -122,6 +131,14 @@ function AnimateAbout(textContainer: HTMLDivElement, scrollTrigger: HTMLDivEleme
                 filter: "blur(0px)",  // Remove blur
                 stagger: 0.1      // Stagger characters by 0.1s each
             })
+
+        paraTl
+        .to(" .text", {
+            opacity:1,
+            y:0,
+            filter:"blur(0px)",
+            // duration: 1
+        }, "<")
 
         // CRITICAL: Refresh ScrollTrigger after DOM modifications
         // Without this, ScrollTrigger calculates measurements on stale DOM
