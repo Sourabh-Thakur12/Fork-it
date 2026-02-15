@@ -6,21 +6,22 @@ import CoreTeamImage from "@/data/Devs";
 
 function Team() {
     const containerRef = useRef<HTMLDivElement | null>(null);
+    const titleRef = useRef<HTMLDivElement | null > (null);
     const [activeDev, setActiveDev] = useState()
 
     useLayoutEffect(() => {
-        if (containerRef.current) {
-            AnimateTeam(containerRef.current);
+        if (containerRef.current && titleRef.current) {
+            AnimateTeam(containerRef.current, titleRef.current);
         }
     }, [])
 
 
     return (
         <>
-            <div className="bg-primary flex flex-col text-9xl font-bold pr-20">
-                <div className="text-[20vh] font-title self-end mt-5 mb-4">THE TEAM</div>
+            <div className="bg-primary flex flex-col text-9xl font-bold pr-20 overflow-hidden">
+                <div className="text-[20vh] font-title self-end mt-5 mb-4" ref={titleRef}>THE TEAM</div>
                 <div className="perspective-distant perspective-origin-left mt-20 ml-20 flex justify-between items-center">
-                    <div className="ml-5 perspective-distant perspective-origin-left" ref={containerRef}>
+                    <div className="ml-5 perspective-distant perspective-origin-left mb-5" ref={containerRef}>
                         {/* <div data-team className="text-stroke-1" >ALOK</div>
                     <div data-team className="text-stroke-1" >SURAJ</div>
                     <div data-team className="text-stroke-1" >MANAVI</div>
@@ -28,7 +29,7 @@ function Team() {
                     <div data-team className="text-stroke-1" >SOURABH</div>
                     <div data-team className="text-stroke-1" >PRASHANT</div> */}
                         {Object.keys(CoreTeamImage).map((name) => (
-                            <div data-team key={name} className="text-stroke-1 "
+                            <div data-team key={name} className="text-stroke-1"
                                 onMouseEnter={() => setActiveDev(name)}
                                 onMouseLeave={() => setActiveDev(null)} >
                                 {name}

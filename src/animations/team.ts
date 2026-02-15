@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger)
 
 
-const AnimateTeam = (textContainer: HTMLDivElement) => {
+const AnimateTeam = (textContainer: HTMLDivElement, titleRef: HTMLDivElement) => {
     requestAnimationFrame(() => {
         setTimeout(() => {
             const team = textContainer.querySelectorAll("[data-team]");
@@ -29,6 +29,19 @@ const AnimateTeam = (textContainer: HTMLDivElement) => {
                 }
             })
 
+            const titleTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: titleRef,
+                    start: "top bottom",
+                    end:"center 40%",
+                    scrub:0.6,
+
+                    toggleActions: "play pause resume reset",
+
+                    markers: true
+                }
+            })
+
             wrapperTl.set(textContainer,{
                 rotateY:20,
                 translateY:1000,
@@ -36,8 +49,17 @@ const AnimateTeam = (textContainer: HTMLDivElement) => {
 
             })
 
+            titleTl.set(titleRef,{
+                x:200
+            })
 
 
+
+            titleTl
+            .to(titleRef, {
+                x:0,
+
+            })
 
             wrapperTl
             .to(textContainer,{
