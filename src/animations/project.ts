@@ -2,16 +2,34 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
+const spacingX = 0.2
+const spacingY = 0.06
+
+function getCardPos(index: number, el: HTMLElement){
+    return{
+        x: index * -el.offsetWidth * spacingX,
+        y: index * -el.offsetHeight * spacingY
+    }
+}
+
+
 function AnimateProject(cardContainer:HTMLDivElement) {
     requestAnimationFrame(() => {
         setTimeout(() => {
             const compactCards = cardContainer.querySelectorAll("[data-compactcard]")
-            let cards = []
+            // let cards = []
 
-            gsap.set(compactCards, {
-                x: (i) => i * -35,
-               y: (i) => i * -24,
-                opacity:0
+            compactCards.forEach((card: Element, index: number) => {
+                const htmlCard = card as HTMLDivElement
+                const pos = getCardPos(index, htmlCard)
+                gsap.set(htmlCard, {
+                    x: pos.x,
+                    y: pos.y,
+                    opacity: 0
+                })
+                // Store original position as data attribute
+                htmlCard.dataset.originalX = `${pos.x}`
+                htmlCard.dataset.originalY = `${pos.y}`
             })
 
             const compactcardTl = gsap.timeline({
@@ -43,13 +61,20 @@ function AnimateProject(cardContainer:HTMLDivElement) {
 
 function CardHoverEnter(Enter:HTMLDivElement) {
     gsap.to(Enter, {
-        y:-100,
+        x: "-=20",
+        rotateZ:"-30",
+        // yoyo:true,
+        // repeat: 1
         // scale:1.5
     })
 }
 function CardHoverLeave(Leave:HTMLDivElement) {
-    gsap.to(Leave,{
-        y:0,
+    const originalX = parseFloat(Leave.dataset.originalX || "0")
+    const originalY = parseFloat(Leave.dataset.originalY || "0")
+    gsap.to(Leave, {
+        x: originalX,
+        // y: originalY,
+        rotateZ:0,
         // scale:1
     })
 }

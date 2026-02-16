@@ -48,7 +48,7 @@ function Projects() {
                                     <div
                                         data-compactcard
                                         key={project.id}
-                                        className={`absolute  `}
+                                        className={`absolute  origin-bottom`}
                                         style={{ zIndex: z }}
                                         onMouseEnter={(e) => {
                                             handleEnter(e)
@@ -57,7 +57,8 @@ function Projects() {
                                         onMouseLeave={(e) => {
                                             handleLeave(e)
                                             setIsActive(project)
-                                            }}>
+                                            }}
+                                            >
                                         <Cards varient={"compact"} {...project} />
                                     </div>
                                 )
