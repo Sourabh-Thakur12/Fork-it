@@ -65,8 +65,11 @@ function DetailedCards({
 function CompactCard(props: ProjectCardProps) {
     return (
         <>
-            <div className="w-[12vw] h-[24vw] bg-red-800 m-2 skew-x-12 border rounded-2xl">
-                <div className="p-5 flex flex-col w-full h-full justify-evenly items-center font-body">
+            <div className="w-[12vw] h-[24vw] bg-red-800 m-2 skew-x-12 border rounded-2xl relative overflow-hidden">
+                    <div className="absolute inset-0 w-full h-full z-0">
+                        <img src={props.image} alt="image not loaded" className="w-full h-full object-cover" />
+                    </div>
+                <div className="p-5 flex flex-col w-full h-full justify-evenly items-center font-body relative z-10">
                     <div className="text-3xl">{props.title}</div>
                     <div className="flex flex-wrap overflow-hidden max-h-1/5">
                         {props.tags.map((ele) => (

@@ -10,7 +10,7 @@ function AnimateProject(cardContainer:HTMLDivElement) {
 
             gsap.set(compactCards, {
                 x: (i) => i * -35,
-                y: (i) => i * -24,
+               y: (i) => i * -24,
                 opacity:0
             })
 
