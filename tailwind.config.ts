@@ -12,6 +12,9 @@ const config: Config = {
                 title: theme.fonts.title,
                 body: theme.fonts.body
             },
+            fontSize: {
+                clamp: "clamp(1rem,2vw,3rem)"
+            }
         },
     },
     plugins: [],
