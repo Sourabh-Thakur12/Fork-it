@@ -102,7 +102,7 @@ function AnimateAbout(textContainer: HTMLDivElement, bottomContainer: HTMLDivEle
                 end: "center 40%",        // When element center hits 40% of viewport
                 scrub: 0.6,               // 0.6s smoothing between scroll and animation
                 toggleActions: "play pause resume reset",
-                markers: true,            // Remove in production
+                // markers: true,            // Remove in production
                 onEnter: () => console.log("trigger entered"),
                 onLeave: () => console.log("trigger left"),
             },
@@ -116,7 +116,7 @@ function AnimateAbout(textContainer: HTMLDivElement, bottomContainer: HTMLDivEle
                 end: "bottom 90%",        // When element center hits 40% of viewport
                 scrub: 0.6,               // 0.6s smoothing between scroll and animation
                 toggleActions: "play pause resume reset",
-                markers: true,            // Remove in production
+                // markers: true,            // Remove in production
                 onEnter: () => console.log("trigger entered"),
                 onLeave: () => console.log("trigger left"),
             },

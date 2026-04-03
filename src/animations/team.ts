@@ -25,7 +25,7 @@ const AnimateTeam = (textContainer: HTMLDivElement, titleRef: HTMLDivElement) =>
                     toggleActions: "play none resume reset",
                     onEnter: () => console.log("triger Enter"),
 
-                    markers: true
+                    // markers: true
                 }
             })
 
@@ -38,7 +38,7 @@ const AnimateTeam = (textContainer: HTMLDivElement, titleRef: HTMLDivElement) =>
 
                     toggleActions: "play pause resume reset",
 
-                    markers: true
+                    // markers: true
                 }
             })
 

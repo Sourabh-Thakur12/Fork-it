@@ -38,7 +38,7 @@ function AnimateProject(cardContainer:HTMLDivElement) {
                 end: "bottom bottom",
                 toggleActions :"play pause reverse reset",
 
-                markers: true
+                // markers: true
             })
 
 
