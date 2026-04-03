@@ -7,8 +7,8 @@ gsap.registerPlugin(ScrollTrigger)
 const AnimateTeam = (textContainer: HTMLDivElement, titleRef: HTMLDivElement) => {
     requestAnimationFrame(() => {
         setTimeout(() => {
-            const team = textContainer.querySelectorAll("[data-team]");
-            let member = []
+            const team = textContainer.querySelectorAll<HTMLElement>("[data-team]");
+            let member: HTMLElement[] = []
 
             team.forEach((el, i) => {
                 member.push(el);

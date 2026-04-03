@@ -1,8 +1,13 @@
 
+type MemberCardProps = {
+    imageSrc: string;
+    role: string;
+};
+
 function MemberCard({
     imageSrc,
     role
-}) {
+}: MemberCardProps) {
 
     return (
 

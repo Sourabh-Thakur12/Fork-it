@@ -7,7 +7,8 @@ import CoreTeamImage from "@/data/Devs";
 function Team() {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const titleRef = useRef<HTMLDivElement | null > (null);
-    const [activeDev, setActiveDev] = useState()
+    type CoreTeamName = keyof typeof CoreTeamImage
+    const [activeDev, setActiveDev] = useState<CoreTeamName | null>(null)
 
     useLayoutEffect(() => {
         if (containerRef.current && titleRef.current) {
@@ -30,7 +31,7 @@ function Team() {
                     <div data-team className="text-stroke-1" >PRASHANT</div> */}
                         {Object.keys(CoreTeamImage).map((name) => (
                             <div data-team key={name} className="text-stroke-1"
-                                onMouseEnter={() => setActiveDev(name)}
+                                onMouseEnter={() => setActiveDev(name as CoreTeamName)}
                                 onMouseLeave={() => setActiveDev(null)} >
                                 {name}
                             </div>
