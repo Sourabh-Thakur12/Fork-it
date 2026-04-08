@@ -4,12 +4,12 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
     const ua = request.headers.get('user-agent') || '';
     const isMobile = /Android|iPhone|iPad|iPod/i.test(ua);
-  const { pathName } = request.nextUrl;
+  const { pathname } = request.nextUrl;
 
 
 
   // Check if the device is a mobile
-  if (isMobile && !pathName.startsWith('/mobile-not-supported')) {
+  if (isMobile && !pathname.startsWith('/mobile-not-supported')) {
     // Redirect to the custom mobile-not-supported page
     const mobileRedirectUrl = new URL('/mobile-not-supported', request.url);
     return NextResponse.redirect(mobileRedirectUrl);
