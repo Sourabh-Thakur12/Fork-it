@@ -10,7 +10,7 @@ const Page = () => {
     Website Not Accessible on Mobile Devices
    </h1>
    <p>
-    Sorry😢, our website is not accessible on mobile devices. Please
+    our website is not accessible on mobile devices. Please
     use a desktop or laptop to access the site.
    </p>
   </div>
