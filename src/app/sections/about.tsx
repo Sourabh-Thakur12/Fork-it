@@ -22,7 +22,7 @@ function About() {
     return (
         <>
             <div className="bg-primary min-h-dvh relative" >
-                <div className="text-[clamp(1.775rem,5vw,3.75rem)]/tight font-bold font-body absolute z-20 flex flex-col ml-20 mr-20" ref={textContainerRef} >
+                <div className="text-6xl/tight font-bold font-body absolute z-20 flex flex-col ml-20 mr-20" ref={textContainerRef} >
                     <div data-line className="overflow-hidden">
                         <p><span className="split-text block">As a team of technophiles and problem-solvers, we build meaningful digital systems that challenge convention,</span></p>
                     </div>
@@ -35,7 +35,7 @@ function About() {
                 <div className="flex justify-center items-center h-[70vh] pt-10 translate-y-20">
                     <div className="max-w-1/2 w-1/3 h-full m-10  -skew-x-9 flex justify-end items-center flex-col relative">
                         <div className="mb-10 relative"><img src="images/team_pic_ph.png" alt="error loading image" /></div>
-                        <div className="text-9xl text-clamp font-body font-bold fixed z-10 ">About Us</div>
+                        <div className="text-9xl font-body font-bold fixed z-10 ">About Us</div>
                         <div className="absolute h-full w-full bg-linear-to-b from-secondary to-primary -z-1 blur-xs"></div>
                     </div>
                     <div className="max-w-1/3 relative">
