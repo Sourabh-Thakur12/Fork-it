@@ -36,7 +36,7 @@ const AnimateTeam = (textContainer: HTMLDivElement, titleRef: HTMLDivElement) =>
                     end:"center 40%",
                     scrub:0.6,
 
-                    toggleActions: "play pause resume reset",
+                    // toggleActions: "play pause resume reset",
 
                     // markers: true
                 }

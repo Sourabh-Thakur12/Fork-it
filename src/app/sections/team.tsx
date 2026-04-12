@@ -19,7 +19,7 @@ function Team() {
 
     return (
         <>
-            <div className="bg-primary flex flex-col text-9xl font-bold pr-20 overflow-hidden">
+            <div className="bg-primary flex flex-col text-9xl font-bold pr-20 overflow-clip">
                 <div className="text-[20vh] font-title self-end mt-5 mb-4" ref={titleRef}>THE TEAM</div>
                 <div className="perspective-distant perspective-origin-left mt-20 ml-20 flex justify-between items-center">
                     <div className="ml-5 perspective-distant perspective-origin-left mb-5" ref={containerRef}>
@@ -39,7 +39,7 @@ function Team() {
                         ))}
                     </div>
                     <div className="mr-5 pr-5 -translate-x-25"><MemberCard
-                    imageSrc={activeDev? CoreTeamImage[activeDev].image : "images/ideal_alok.png"}
+                    imageSrc={activeDev? CoreTeamImage[activeDev].image : "images/alok.png"}
                     role = {activeDev? CoreTeamImage[activeDev].role : 'DEVELOPER'}
                       /></div>
                 </div>

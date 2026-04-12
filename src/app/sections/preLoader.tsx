@@ -39,7 +39,7 @@ function PreLoader() {
 
     return (
         <div className="fixed inset-0 z-50" ref= {wrapperRef}>
-            <div className="bg-primary dark:bg-primary grid overflow-hidden min-h-dvh place-items-center rotate-90">
+            <div className="bg-primary dark:bg-primary grid overflow-hidden min-h-dvh place-items-center">
 
                 <div className="relative w-fit">
                     <div className=" absolute inset-0 z-10 flex justify-between items-center w-full scale-300 translate-y-20 ">

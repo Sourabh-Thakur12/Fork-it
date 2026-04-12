@@ -21,7 +21,7 @@ function About() {
 
     return (
         <>
-            <div className="bg-primary min-h-dvh relative" >
+            <div className="bg-primary min-h-dvh relative " >
                 <div className="text-6xl/tight font-bold font-body absolute z-20 flex flex-col ml-20 mr-20" ref={textContainerRef} >
                     <div data-line className="overflow-hidden">
                         <p><span className="split-text block">As a team of technophiles and problem-solvers, we build meaningful digital systems that challenge convention,</span></p>
